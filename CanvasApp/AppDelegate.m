@@ -26,6 +26,8 @@
     
     [[self window] setRootViewController:viewController];
     
+    [[self window] setBackgroundColor:[UIColor whiteColor]];
+    
     return YES;
 }
 

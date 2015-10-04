@@ -15,6 +15,9 @@
 		4E3EC2D01BBCD66E00C73CFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3EC2CE1BBCD66E00C73CFE /* LaunchScreen.storyboard */; };
 		4E3EC2DB1BBCD66E00C73CFE /* CanvasAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC2DA1BBCD66E00C73CFE /* CanvasAppTests.m */; };
 		4E3EC2E61BBCD66E00C73CFE /* CanvasAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC2E51BBCD66E00C73CFE /* CanvasAppUITests.m */; };
+		4E3EC3341BBD294900C73CFE /* YBPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC3331BBD294900C73CFE /* YBPoint.m */; settings = {ASSET_TAGS = (); }; };
+		4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC3361BBD295A00C73CFE /* YBLine.m */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		4E3EC2E11BBCD66E00C73CFE /* CanvasAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanvasAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3EC2E51BBCD66E00C73CFE /* CanvasAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasAppUITests.m; sourceTree = "<group>"; };
 		4E3EC2E71BBCD66E00C73CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E3EC3321BBD294900C73CFE /* YBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPoint.h; sourceTree = "<group>"; };
+		4E3EC3331BBD294900C73CFE /* YBPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPoint.m; sourceTree = "<group>"; };
+		4E3EC3351BBD295A00C73CFE /* YBLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBLine.h; sourceTree = "<group>"; };
+		4E3EC3361BBD295A00C73CFE /* YBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBLine.m; sourceTree = "<group>"; };
+		4EA0D3DC1BC1405400DF8699 /* YBCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCanvas.h; sourceTree = "<group>"; };
+		4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCanvas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,12 @@
 				4E3EC2CE1BBCD66E00C73CFE /* LaunchScreen.storyboard */,
 				4E3EC2D11BBCD66E00C73CFE /* Info.plist */,
 				4E3EC2C01BBCD66E00C73CFE /* Supporting Files */,
+				4E3EC3321BBD294900C73CFE /* YBPoint.h */,
+				4E3EC3331BBD294900C73CFE /* YBPoint.m */,
+				4E3EC3351BBD295A00C73CFE /* YBLine.h */,
+				4E3EC3361BBD295A00C73CFE /* YBLine.m */,
+				4EA0D3DC1BC1405400DF8699 /* YBCanvas.h */,
+				4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */,
 			);
 			path = CanvasApp;
 			sourceTree = "<group>";
@@ -271,8 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3EC2C81BBCD66E00C73CFE /* ViewController.m in Sources */,
+				4E3EC3341BBD294900C73CFE /* YBPoint.m in Sources */,
+				4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */,
 				4E3EC2C51BBCD66E00C73CFE /* AppDelegate.m in Sources */,
 				4E3EC2C21BBCD66E00C73CFE /* main.m in Sources */,
+				4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +518,7 @@
 				4E3EC2EC1BBCD66E00C73CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E3EC2ED1BBCD66E00C73CFE /* Build configuration list for PBXNativeTarget "CanvasAppTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +527,7 @@
 				4E3EC2EF1BBCD66E00C73CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E3EC2F01BBCD66E00C73CFE /* Build configuration list for PBXNativeTarget "CanvasAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +536,7 @@
 				4E3EC2F21BBCD66E00C73CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

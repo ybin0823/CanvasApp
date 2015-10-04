@@ -7,48 +7,48 @@
 //
 
 #import "ViewController.h"
+#import "YBCanvas.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+{
+    YBCanvas *canvas;
+}
 
-- (void)viewDidLoad {
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        canvas = nil;
+    }
+    
+    return self;
+}
+-(void)dealloc
+{
+    [canvas release];
+    
+    [super dealloc];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    CGSize screenSize = [[self view] bounds].size;
+    canvas = [[YBCanvas alloc]
+              initWithFrame:CGRectMake(0, 20, screenSize.width, screenSize.height - 100)];
+    [[self view] addSubview:canvas];
+    [canvas setBackgroundColor:[UIColor yellowColor]];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesBegan");
-    
-    UITouch *touch = [touches anyObject];
-    
-    CGPoint point = [touch locationInView:[self view]];
-    NSLog(@"x : %f, y : %f", point.x, point.y);
-}
-
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesMoved");
-    
-    UITouch *touch = [touches anyObject];
-    
-    CGPoint point = [touch locationInView:[self view]];
-    NSLog(@"x : %f, y : %f", point.x, point.y);
-    
-    UIView *rect = [[UIView alloc] initWithFrame:CGRectMake(point.x, point.y, 5, 5)];
-    [rect setBackgroundColor:[UIColor redColor]];
-    
-    [[self view] addSubview:rect];
-    
-    [[self view] setNeedsDisplay];
-}
-
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesEnded");
 }
 
 @end

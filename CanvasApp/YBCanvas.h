@@ -12,6 +12,8 @@
 
 @interface YBCanvas : UIView
 
-@property (nonatomic, readonly) NSMutableArray *path;
+@property (nonatomic, readonly) NSMutableArray *lines;
+
+- (void)clear;
 
 @end

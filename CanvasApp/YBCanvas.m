@@ -12,24 +12,24 @@
 
 @implementation YBCanvas
 {
-    NSMutableArray *path;
+    NSMutableArray *lines;
 }
 
-@synthesize path = path;
+@synthesize lines = lines;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        path = [[NSMutableArray alloc] init];
+        lines = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 - (void)dealloc
 {
-    [path release];
+    [lines release];
     
     [super dealloc];
 }
@@ -43,7 +43,7 @@
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     CGContextSetLineWidth(context, 2.0f);
     
-    for (YBLine *line in path) {
+    for (YBLine *line in lines) {
         CGContextMoveToPoint(context, [line startPoint].x, [line startPoint].y);
         CGContextAddLineToPoint(context, [line endPoint].x, [line endPoint].y);
         CGContextStrokePath(context);
@@ -63,27 +63,34 @@
     
     YBLine *line = [YBLine YBLineWithStartPoint:startPoint endPoint:endPoint];
     
-    [path addObject:line];
+    [lines addObject:line];
 }
 
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touchesMoved");
 
     // 이전 line의 마지막 포인트를 start point로 하고 움직인 포인트를 end point로 한다
     UITouch *touch = [touches anyObject];
     YBPoint *point = [YBPoint YBPointWithPoint:[touch locationInView:self]];
-    YBLine *previousLine = [path lastObject];
+    YBLine *previousLine = [lines lastObject];
     YBLine *line = [YBLine YBLineWithStartPoint:[previousLine endPoint] endPoint:point];
     
-    [path addObject:line];
+    [lines addObject:line];
     
     [self setNeedsDisplay];
 }
 
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touchesEnded");
+}
+
+- (void)clear
+{
+    lines = nil;
+    lines = [[NSMutableArray alloc] init];
+    [self setNeedsDisplay];
 }
 
 

@@ -14,6 +14,9 @@
 
 @property (nonatomic, readonly) NSMutableArray *lines;
 
+- (void)record;
+- (void)play;
+- (void)stop;
 - (void)clear;
 
 @end

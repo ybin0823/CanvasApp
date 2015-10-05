@@ -9,10 +9,15 @@
 #import "YBCanvas.h"
 #import "YBPoint.h"
 #import "YBLine.h"
+#import "LineWithTime.h"
 
 @implementation YBCanvas
 {
     NSMutableArray *lines;
+    NSMutableArray *recordedLines;
+    NSTimer *timer;
+    int index;
+    BOOL recordMode;
 }
 
 @synthesize lines = lines;
@@ -23,6 +28,8 @@
     
     if (self) {
         lines = [[NSMutableArray alloc] init];
+        recordedLines = [[NSMutableArray alloc] init];
+        recordMode = NO;
     }
     
     return self;
@@ -30,13 +37,14 @@
 - (void)dealloc
 {
     [lines release];
+    [recordedLines release];
+    [timer release];
     
     [super dealloc];
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"drawRect");
     [super drawRect:rect];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -52,8 +60,6 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchesBegan");
-    
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
 
@@ -62,14 +68,18 @@
     YBPoint *endPoint = [YBPoint YBPointWithPoint:point];
     
     YBLine *line = [YBLine YBLineWithStartPoint:startPoint endPoint:endPoint];
-    
+
     [lines addObject:line];
+    
+    if (recordMode) {
+        NSDate *time = [NSDate date];
+        LineWithTime *lineWithTime = [LineWithTime LineWithTime:line Time:time];
+        [recordedLines addObject:lineWithTime];
+    }
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchesMoved");
-
     // 이전 line의 마지막 포인트를 start point로 하고 움직인 포인트를 end point로 한다
     UITouch *touch = [touches anyObject];
     YBPoint *point = [YBPoint YBPointWithPoint:[touch locationInView:self]];
@@ -78,14 +88,25 @@
     
     [lines addObject:line];
     
+    if (recordMode) {
+        NSDate *time = [NSDate date];
+        LineWithTime *lineWithTime = [LineWithTime LineWithTime:line Time:time];
+        [recordedLines addObject:lineWithTime];
+    }
+    
     [self setNeedsDisplay];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchesEnded");
 }
 
+- (void)record
+{
+    recordedLines = nil;
+    recordedLines = [[NSMutableArray alloc] init];
+    recordMode = YES;
+}
 - (void)clear
 {
     lines = nil;
@@ -93,5 +114,38 @@
     [self setNeedsDisplay];
 }
 
+//TODO 현재 line 별 time interval을 사용하지 않고 정해진 시간(0.1)마다 tiemr 발동
+- (void)play
+{
+    // record mode 이거나 recode 된 line이 없다면 play하지 않는다
+    if (recordMode || ![recordedLines count]) {
+        return;
+    }
+    
+    [self clear];
+    
+    index = 0;
+    
+    // 0.1 초마다 timer가 동작하면서 line을 그린다
+    timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
+    
+    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+    [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+}
 
+- (void)handleTimer
+{
+    [lines addObject:[[recordedLines objectAtIndex:index++] line]];
+    [self setNeedsDisplay];
+    
+    if ([recordedLines count] == index) {
+        [timer invalidate];
+        timer = nil;
+    }
+}
+
+- (void) stop
+{
+    recordMode = NO;
+}
 @end

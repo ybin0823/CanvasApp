@@ -56,30 +56,33 @@
 
 - (void)configureToolbarItems
 {
+    UIBarButtonItem *flexibleSpaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithTitle:@"Record" style:UIBarButtonItemStylePlain target:self action:@selector(record)];
     UIBarButtonItem *playButton = [[UIBarButtonItem alloc] initWithTitle:@"Play" style:UIBarButtonItemStylePlain target:self action:@selector(play)];
     UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithTitle:@"Stop" style:UIBarButtonItemStylePlain target:self action:@selector(stop)];
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clear)];
     
     self.navigationController.toolbarHidden = NO;
-    self.toolbarItems = [NSArray arrayWithObjects:recordButton, playButton, stopButton, clearButton, nil];
+    self.toolbarItems = [NSArray arrayWithObjects:recordButton,
+                         flexibleSpaceButtonItem, playButton, flexibleSpaceButtonItem,
+                         stopButton, flexibleSpaceButtonItem, clearButton, nil];
 }
 
 - (void)record
 {
-    NSLog(@"Record");
+    [canvas record];
 }
 - (void)play
 {
-    NSLog(@"Play");
+    [canvas play];
 }
 - (void)stop
 {
-    NSLog(@"Stop");
+    [canvas stop];
 }
 - (void)clear
 {
     [canvas clear];
-    NSLog(@"Clear");
 }
 @end

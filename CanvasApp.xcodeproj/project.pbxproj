@@ -18,6 +18,7 @@
 		4E3EC3341BBD294900C73CFE /* YBPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC3331BBD294900C73CFE /* YBPoint.m */; settings = {ASSET_TAGS = (); }; };
 		4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC3361BBD295A00C73CFE /* YBLine.m */; settings = {ASSET_TAGS = (); }; };
 		4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3E11BC19A8300DF8699 /* LineWithTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		4E3EC3361BBD295A00C73CFE /* YBLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBLine.m; sourceTree = "<group>"; };
 		4EA0D3DC1BC1405400DF8699 /* YBCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCanvas.h; sourceTree = "<group>"; };
 		4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCanvas.m; sourceTree = "<group>"; };
+		4EA0D3DF1BC19A8300DF8699 /* LineWithTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineWithTime.h; sourceTree = "<group>"; };
+		4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineWithTime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				4E3EC3361BBD295A00C73CFE /* YBLine.m */,
 				4EA0D3DC1BC1405400DF8699 /* YBCanvas.h */,
 				4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */,
+				4EA0D3DF1BC19A8300DF8699 /* LineWithTime.h */,
+				4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */,
 			);
 			path = CanvasApp;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				4E3EC3341BBD294900C73CFE /* YBPoint.m in Sources */,
 				4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */,
 				4E3EC2C51BBCD66E00C73CFE /* AppDelegate.m in Sources */,
+				4EA0D3E11BC19A8300DF8699 /* LineWithTime.m in Sources */,
 				4E3EC2C21BBCD66E00C73CFE /* main.m in Sources */,
 				4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */,
 			);

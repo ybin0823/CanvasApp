@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "HomeViewController.h"
+#import "ListViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,12 +25,28 @@
     [window makeKeyAndVisible];
     [self setWindow:window];
     
-    ViewController *viewController = [[[ViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-    viewController.title = @"CanvasApp";
+    UITabBarController *tabBarController = [[[UITabBarController alloc] init] autorelease];
     
-    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    HomeViewController *homeViewController = [[HomeViewController alloc] init];
+    homeViewController.title = @"Home";
+    homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"ic_home_white.png"] selectedImage:nil];
     
-    [[self window] setRootViewController:navigationController];
+    ListViewController *listViewController = [[ListViewController alloc] init];
+    listViewController.title = @"List";
+    listViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"List" image:[UIImage imageNamed:@"ic_list_white.png"] selectedImage:nil];
+    
+    ViewController *drawViewController = [[[ViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    drawViewController.title = @"Draw";
+    
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:homeViewController] autorelease];
+    UINavigationController *theNavController2 = [[[UINavigationController alloc] initWithRootViewController:listViewController] autorelease];
+    
+    NSArray *controllers = [NSArray arrayWithObjects:navigationController,
+                            theNavController2, nil];
+    tabBarController.viewControllers = controllers;
+    
+    [[tabBarController tabBar] setTintColor:[UIColor colorWithRed:255 green:0 blue:255 alpha:0.5]];
+    [[self window] setRootViewController:tabBarController];
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     
     return YES;

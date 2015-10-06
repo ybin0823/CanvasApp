@@ -59,9 +59,13 @@
     UIBarButtonItem *flexibleSpaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
     UIBarButtonItem *recordButton = [[UIBarButtonItem alloc] initWithTitle:@"Record" style:UIBarButtonItemStylePlain target:self action:@selector(record)];
+    [recordButton setTintColor:[UIColor colorWithRed:125 green:0 blue:125 alpha:0.5]];
     UIBarButtonItem *playButton = [[UIBarButtonItem alloc] initWithTitle:@"Play" style:UIBarButtonItemStylePlain target:self action:@selector(play)];
+    [playButton setTintColor:[UIColor colorWithRed:125 green:0 blue:125 alpha:0.5]];
     UIBarButtonItem *stopButton = [[UIBarButtonItem alloc] initWithTitle:@"Stop" style:UIBarButtonItemStylePlain target:self action:@selector(stop)];
+    [stopButton setTintColor:[UIColor colorWithRed:125 green:0 blue:125 alpha:0.5]];
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clear)];
+    [clearButton setTintColor:[UIColor colorWithRed:125 green:0 blue:125 alpha:0.5]];
     
     self.navigationController.toolbarHidden = NO;
     self.toolbarItems = [NSArray arrayWithObjects:recordButton,

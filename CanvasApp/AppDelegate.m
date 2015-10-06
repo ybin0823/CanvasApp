@@ -27,16 +27,13 @@
     
     UITabBarController *tabBarController = [[[UITabBarController alloc] init] autorelease];
     
-    HomeViewController *homeViewController = [[HomeViewController alloc] init];
+    HomeViewController *homeViewController = [[[HomeViewController alloc] init] autorelease];
     homeViewController.title = @"Home";
     homeViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:[UIImage imageNamed:@"ic_home_white.png"] selectedImage:nil];
     
-    ListViewController *listViewController = [[ListViewController alloc] init];
+    ListViewController *listViewController = [[[ListViewController alloc] init] autorelease];
     listViewController.title = @"List";
     listViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"List" image:[UIImage imageNamed:@"ic_list_white.png"] selectedImage:nil];
-    
-    ViewController *drawViewController = [[[ViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-    drawViewController.title = @"Draw";
     
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:homeViewController] autorelease];
     UINavigationController *theNavController2 = [[[UINavigationController alloc] initWithRootViewController:listViewController] autorelease];

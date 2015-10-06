@@ -80,11 +80,11 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    // 이전 line의 마지막 포인트를 start point로 하고 움직인 포인트를 end point로 한다
     UITouch *touch = [touches anyObject];
-    YBPoint *point = [YBPoint YBPointWithPoint:[touch locationInView:self]];
-    YBLine *previousLine = [lines lastObject];
-    YBLine *line = [YBLine YBLineWithStartPoint:[previousLine endPoint] endPoint:point];
+    YBPoint *nowPoint = [YBPoint YBPointWithPoint:[touch locationInView:self]];
+    YBPoint *previousPoint = [YBPoint YBPointWithPoint:[touch previousLocationInView:self]];
+    
+    YBLine *line = [YBLine YBLineWithStartPoint:previousPoint endPoint:nowPoint];
     
     [lines addObject:line];
     

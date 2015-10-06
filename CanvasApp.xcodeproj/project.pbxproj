@@ -19,6 +19,11 @@
 		4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EC3361BBD295A00C73CFE /* YBLine.m */; settings = {ASSET_TAGS = (); }; };
 		4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */; settings = {ASSET_TAGS = (); }; };
 		4EA0D3E11BC19A8300DF8699 /* LineWithTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3EC1BC2514600DF8699 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3EB1BC2514600DF8699 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3EF1BC2515200DF8699 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0D3EE1BC2515200DF8699 /* ListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3F11BC251AD00DF8699 /* ic_create_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0D3F01BC251AD00DF8699 /* ic_create_white.png */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3F31BC251BD00DF8699 /* ic_home_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0D3F21BC251BD00DF8699 /* ic_home_white.png */; settings = {ASSET_TAGS = (); }; };
+		4EA0D3F51BC251E300DF8699 /* ic_list_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0D3F41BC251E300DF8699 /* ic_list_white.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,13 @@
 		4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCanvas.m; sourceTree = "<group>"; };
 		4EA0D3DF1BC19A8300DF8699 /* LineWithTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineWithTime.h; sourceTree = "<group>"; };
 		4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineWithTime.m; sourceTree = "<group>"; };
+		4EA0D3EA1BC2514600DF8699 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4EA0D3EB1BC2514600DF8699 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4EA0D3ED1BC2515200DF8699 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		4EA0D3EE1BC2515200DF8699 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		4EA0D3F01BC251AD00DF8699 /* ic_create_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_create_white.png; path = ../../../../../Downloads/icon/ic_create_white_24dp/ios/ic_create_white.imageset/ic_create_white.png; sourceTree = "<group>"; };
+		4EA0D3F21BC251BD00DF8699 /* ic_home_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_home_white.png; path = ../../../../../Downloads/icon/ic_home_white_24dp/ios/ic_home_white.imageset/ic_home_white.png; sourceTree = "<group>"; };
+		4EA0D3F41BC251E300DF8699 /* ic_list_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_list_white.png; path = ../../../../../Downloads/icon/ic_list_white_24dp/ios/ic_list_white.imageset/ic_list_white.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,9 @@
 		4E3EC2BF1BBCD66E00C73CFE /* CanvasApp */ = {
 			isa = PBXGroup;
 			children = (
+				4EA0D3F41BC251E300DF8699 /* ic_list_white.png */,
+				4EA0D3F21BC251BD00DF8699 /* ic_home_white.png */,
+				4EA0D3F01BC251AD00DF8699 /* ic_create_white.png */,
 				4E3EC2C31BBCD66E00C73CFE /* AppDelegate.h */,
 				4E3EC2C41BBCD66E00C73CFE /* AppDelegate.m */,
 				4E3EC2C61BBCD66E00C73CFE /* ViewController.h */,
@@ -130,6 +145,10 @@
 				4EA0D3DD1BC1405400DF8699 /* YBCanvas.m */,
 				4EA0D3DF1BC19A8300DF8699 /* LineWithTime.h */,
 				4EA0D3E01BC19A8300DF8699 /* LineWithTime.m */,
+				4EA0D3EA1BC2514600DF8699 /* HomeViewController.h */,
+				4EA0D3EB1BC2514600DF8699 /* HomeViewController.m */,
+				4EA0D3ED1BC2515200DF8699 /* ListViewController.h */,
+				4EA0D3EE1BC2515200DF8699 /* ListViewController.m */,
 			);
 			path = CanvasApp;
 			sourceTree = "<group>";
@@ -263,9 +282,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA0D3F31BC251BD00DF8699 /* ic_home_white.png in Resources */,
 				4E3EC2D01BBCD66E00C73CFE /* LaunchScreen.storyboard in Resources */,
+				4EA0D3F51BC251E300DF8699 /* ic_list_white.png in Resources */,
 				4E3EC2CD1BBCD66E00C73CFE /* Assets.xcassets in Resources */,
 				4E3EC2CB1BBCD66E00C73CFE /* Main.storyboard in Resources */,
+				4EA0D3F11BC251AD00DF8699 /* ic_create_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,11 +314,13 @@
 			files = (
 				4E3EC2C81BBCD66E00C73CFE /* ViewController.m in Sources */,
 				4E3EC3341BBD294900C73CFE /* YBPoint.m in Sources */,
+				4EA0D3EF1BC2515200DF8699 /* ListViewController.m in Sources */,
 				4EA0D3DE1BC1405400DF8699 /* YBCanvas.m in Sources */,
 				4E3EC2C51BBCD66E00C73CFE /* AppDelegate.m in Sources */,
 				4EA0D3E11BC19A8300DF8699 /* LineWithTime.m in Sources */,
 				4E3EC2C21BBCD66E00C73CFE /* main.m in Sources */,
 				4E3EC3371BBD295A00C73CFE /* YBLine.m in Sources */,
+				4EA0D3EC1BC2514600DF8699 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

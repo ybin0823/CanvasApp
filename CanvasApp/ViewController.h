@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBCanvas.h"
+
+@class ViewController;
 
 @interface ViewController : UIViewController
 
+//- (IBAction)record:(id)sender;
+//- (IBAction)play:(id)sender;
+//- (IBAction)stop:(id)sender;
+//- (IBAction)clear:(id)sender;
+//- (IBAction)cancel:(id)sender;
 
 @end
 

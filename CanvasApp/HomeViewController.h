@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <DrawViewControllerDelegate>
+
 @end

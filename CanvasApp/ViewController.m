@@ -16,20 +16,25 @@
 @implementation ViewController
 {
     YBCanvas *canvas;
+    id <DrawViewControllerDelegate> delegate;
 }
 
--(instancetype)init
+@synthesize delegate = delegate;
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
+    self = [super initWithCoder:aDecoder];
     
     if (self) {
         canvas = nil;
+        NSLog(@"init View Controller");
     }
     
     return self;
 }
 -(void)dealloc
 {
+    NSLog(@"dealloc View Controller");
     [canvas release];
     
     [super dealloc];
@@ -72,5 +77,6 @@
 - (IBAction)cancel:(id)sender
 {
     NSLog(@"cancel");
+    [self.delegate drawViewControllerDidCancle:self];
 }
 @end

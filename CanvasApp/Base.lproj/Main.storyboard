@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--List-->
         <scene sceneID="7hS-PT-5y8">
             <objects>
-                <tableViewController id="MA8-tV-37c" sceneMemberID="viewController">
+                <tableViewController id="MA8-tV-37c" customClass="ListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hmc-hk-OXW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,16 @@
                             <outlet property="delegate" destination="MA8-tV-37c" id="gaD-1I-gSi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gms-8n-0Nb"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="List" id="v4H-Eb-iFR">
+                        <barButtonItem key="rightBarButtonItem" image="ic_create_white.png" id="SiH-VG-4tT">
+                            <color key="tintColor" red="1" green="0.25926604720000002" blue="0.92119487379999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="7eo-dD-tMh" kind="presentation" identifier="AddDrawing" id="1LU-Yx-YUD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcV-DN-5RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +65,7 @@
         <!--Home-->
         <scene sceneID="OGU-26-nny">
             <objects>
-                <viewController id="fG5-dC-K0j" customClass="UINavigationController" sceneMemberID="viewController">
+                <viewController id="fG5-dC-K0j" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E3k-qT-Ar5"/>
                         <viewControllerLayoutGuide type="bottom" id="7ky-s1-Sfj"/>
@@ -64,24 +73,16 @@
                     <view key="view" contentMode="scaleToFill" id="2Li-OB-ASG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQU-6u-rMs">
-                                <rect key="frame" x="166" y="304" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="0.25926604720000002" blue="0.92119487379999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home_white.png" id="Rns-hC-rzj"/>
-                    <navigationItem key="navigationItem" id="12v-pi-Cie">
+                    <navigationItem key="navigationItem" title="Home" id="12v-pi-Cie">
                         <barButtonItem key="backBarButtonItem" title="Home" id="pX2-Va-K2F"/>
                         <barButtonItem key="rightBarButtonItem" image="ic_create_white.png" id="CCg-aC-AdY">
                             <color key="tintColor" red="1" green="0.25926604720000002" blue="0.92119487379999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="7eo-dD-tMh" kind="presentation" id="aci-sH-72t"/>
+                                <segue destination="7eo-dD-tMh" kind="presentation" identifier="AddDrawing" id="aci-sH-72t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -172,7 +173,6 @@
             <objects>
                 <navigationController id="fpT-LP-cUK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home_white.png" id="Sfy-eo-Uot"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="29t-SF-Otu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -218,4 +218,7 @@
         <image name="ic_play_arrow_white.png" width="24" height="24"/>
         <image name="ic_stop_white.png" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1LU-Yx-YUD"/>
+    </inferredMetricsTieBreakers>
 </document>

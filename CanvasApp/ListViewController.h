@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UITableViewController <DrawViewControllerDelegate>
 
 @end

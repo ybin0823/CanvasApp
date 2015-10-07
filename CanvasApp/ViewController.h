@@ -11,8 +11,13 @@
 
 @class ViewController;
 
+@protocol DrawViewControllerDelegate
+- (void)drawViewControllerDidCancle:(ViewController *)controller;
+@end
+
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) id <DrawViewControllerDelegate> delegate;
 //- (IBAction)record:(id)sender;
 //- (IBAction)play:(id)sender;
 //- (IBAction)stop:(id)sender;

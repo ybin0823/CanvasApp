@@ -23,14 +23,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"%@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"AddDrawing"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ViewController *drawViewController = [[navigationController viewControllers] objectAtIndex:0];
+        drawViewController.delegate = self;
+    }
 }
-*/
+
+- (void) drawViewControllerDidCancle:(ViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
